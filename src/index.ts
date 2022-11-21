@@ -15,17 +15,18 @@ export class Message {
         this.content.push(`✅${text}`)
     }
 
-    error=(text: string)=> {
+    error = (text: string) => {
         this.content.push(`❌${text}`)
     }
 
-    warning=(text: string)=> {
+    warning = (text: string) => {
         this.content.push(`❗️${text}`)
     }
 
-    finally=()=> {
+    finally = () => {
         if (this.title) this.content.unshift(this.title)
         const content = this.content.join('\n')
+        this.content = []
         console.log(content)
         webhookFeishu(content)
     }
