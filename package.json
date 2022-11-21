@@ -16,6 +16,7 @@
     "zhengtan2003"
   ],
   "license": "MIT",
+  "homepage": "https://github.com/hudiemon/webhook#readme",
   "files": [
     "dist",
     "compiled"
