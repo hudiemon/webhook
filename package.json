@@ -1,7 +1,7 @@
 {
-  "name": "webhook",
+  "name": "@hudiemon/webhook",
   "version": "0.0.1",
-  "description": "",
+  "description": "飞书webhook",
   "main": "dist/cjs/index.js",
   "types": "dist/cjs/index.d.ts",
   "scripts": {
