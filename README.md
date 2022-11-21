@@ -1,22 +1,31 @@
 # webhook
 
-[![NPM version](https://img.shields.io/npm/v/webhook.svg?style=flat)](https://npmjs.org/package/webhook)
-[![NPM downloads](http://img.shields.io/npm/dm/webhook.svg?style=flat)](https://npmjs.org/package/webhook)
+[![NPM version](https://img.shields.io/npm/v/webhook.svg?style=flat)](https://npmjs.org/package/@hudiemon/webhook)
+[![NPM downloads](http://img.shields.io/npm/dm/webhook.svg?style=flat)](https://npmjs.org/package/@hudiemon/webhook)
 
 ## Install
 
 ```bash
-$ pnpm install
+$ pnpm i @hudiemon/webhook
 ```
 
-```bash
-$ npm run dev
-$ npm run build
+```typescript
+import {Message} from '@hudiemon/webhook'
+
+const message = new Message({title: "test"})
+
+message.info('info')
+message.success('success')
+message.warning('warning')
+message.error('error')
+message.finally()
+
+// test
+// info
+// ✅success
+// ❗️warning
+// ❌error
 ```
-
-## Options
-
-TODO
 
 ## LICENSE
 

@@ -26,7 +26,7 @@ export class Message {
     }
 
     warning(text: string) {
-        const tempText = `⚠️${text}`
+        const tempText = `❗️${text}`
         console.log(tempText)
         this.content.push(tempText)
     }
@@ -36,8 +36,3 @@ export class Message {
         webhookFeishu(this.content, process.env.WEBHOOK_FEISHU)
     }
 }
-
-const message = new Message({title: "test"})
-message.success('lala')
-message.finally()
-
