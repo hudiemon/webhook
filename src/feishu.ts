@@ -10,7 +10,7 @@ export const webhookFeishu = (text: any) => {
         {
             'msg_type': 'text',
             'content': {
-                'text': text.join('\n'),
+                text
             },
         }, {
             headers: {

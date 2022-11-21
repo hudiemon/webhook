@@ -9,30 +9,24 @@ export class Message {
     }
 
     info = (text: string) => {
-        const tempText = `${text}`
-        console.log(tempText)
-        this.content.push(tempText)
+        this.content.push(text)
     }
     success = (text: string) => {
-        const tempText = `✅${text}`
-        console.log(tempText)
-        this.content.push(tempText)
+        this.content.push(`✅${text}`)
     }
 
     error=(text: string)=> {
-        const tempText = `❌${text}`
-        console.log(tempText)
-        this.content.push(tempText)
+        this.content.push(`❌${text}`)
     }
 
     warning=(text: string)=> {
-        const tempText = `❗️${text}`
-        console.log(tempText)
-        this.content.push(tempText)
+        this.content.push(`❗️${text}`)
     }
 
     finally=()=> {
         if (this.title) this.content.unshift(this.title)
-        webhookFeishu(this.content)
+        const content = this.content.join('\n')
+        console.log(content)
+        webhookFeishu(content)
     }
 }
