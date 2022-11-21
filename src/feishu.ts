@@ -1,12 +1,12 @@
 import axios from "./axios";
 
-export const webhookFeishu = (text: any, WEBHOOK_FEISHU: string | undefined) => {
-    if (!WEBHOOK_FEISHU) {
+export const webhookFeishu = (text: any) => {
+    if (!process.env.WEBHOOK_FEISHU) {
         console.log('🤖️【飞书机器人】未设置')
         return
     }
     return axios.post(
-        WEBHOOK_FEISHU,
+        process.env.WEBHOOK_FEISHU,
         {
             'msg_type': 'text',
             'content': {

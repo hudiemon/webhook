@@ -19,20 +19,20 @@ export class Message {
         this.content.push(tempText)
     }
 
-    error(text: string) {
+    error=(text: string)=> {
         const tempText = `❌${text}`
         console.log(tempText)
         this.content.push(tempText)
     }
 
-    warning(text: string) {
+    warning=(text: string)=> {
         const tempText = `❗️${text}`
         console.log(tempText)
         this.content.push(tempText)
     }
 
-    finally() {
+    finally=()=> {
         if (this.title) this.content.unshift(this.title)
-        webhookFeishu(this.content, process.env.WEBHOOK_FEISHU)
+        webhookFeishu(this.content)
     }
 }
