@@ -15,7 +15,7 @@ export class Message {
         this.content.push(`✅${text}`)
     }
 
-    error = (text: string) => {
+    error = (text: any) => {
         this.content.push(`❌${text}`)
     }
 
