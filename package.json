@@ -1,7 +1,7 @@
 {
   "name": "@hudiemon/webhook",
-  "version": "0.0.6",
-  "description": "飞书webhook",
+  "version": "0.0.7",
+  "description": "webhook",
   "main": "dist/cjs/index.js",
   "types": "dist/cjs/index.d.ts",
   "scripts": {
@@ -11,7 +11,10 @@
     "prepublishOnly": "father doctor && npm run build",
     "start": "npm run build && node -r dotenv/config dist/cjs/index.js"
   },
-  "keywords": [],
+  "keywords": [
+    "飞书webhook",
+    "企业微信webhook"
+  ],
   "authors": [
     "zhengtan2003"
   ],
