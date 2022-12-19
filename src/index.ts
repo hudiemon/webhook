@@ -1,6 +1,7 @@
-import {webhookFeishu} from './feishu'
+import webhookFeishu from "./feishu"
+import webhookWeixin from "./weixin"
 
-export class Message {
+class Webhook {
     title?: string
     content: string[] = []
 
@@ -8,26 +9,32 @@ export class Message {
         this.title = title
     }
 
-    info = (text: string) => {
+    private push = (text: string) => {
+        console.log(text)
         this.content.push(text)
     }
-    success = (text: string) => {
-        this.content.push(`✅${text}`)
+    public info = (text: string) => {
+        this.push(text)
+    }
+    public success = (text: string) => {
+        this.push(`✅${text}`)
     }
 
-    error = (text: any) => {
-        this.content.push(`❌${text}`)
+    public error = (text: any) => {
+        this.push(`❌${text}`)
     }
 
-    warning = (text: string) => {
-        this.content.push(`❗️${text}`)
+    public warning = (text: string) => {
+        this.push(`❗️${text}`)
     }
 
-    finally = () => {
+    public finally = () => {
         if (this.title) this.content.unshift(this.title)
         const content = this.content.join('\n')
         this.content = []
-        console.log(content)
         webhookFeishu(content)
+        webhookWeixin(content)
     }
 }
+
+export default Webhook
