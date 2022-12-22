@@ -1,18 +1,16 @@
 import {weixin} from './services'
 
 const webhookWeixin = async (content: any) => {
-    if (!process.env.WEBHOOK_WEIXIN) {
-        console.log('❗【企业微信机器人】未设置')
-        return
-    }
-    const {errcode, errmsg} = await weixin({
+    return weixin({
         msgtype: 'text',
         text: {content},
+    }).then(({errcode, errmsg}) => {
+        if (errcode !== 0) {
+            console.log(`❌【企业微信机器人】${errmsg}`)
+            return Promise.reject(errmsg)
+        }
+        console.log('🤖【企业微信机器人】消息发送成功')
     })
-    if (errcode !== 0) {
-        console.log(`❌【企业微信机器人】${errmsg}`)
-        return
-    }
-    console.log('🤖【企业微信机器人】消息发送成功')
+
 }
 export default webhookWeixin

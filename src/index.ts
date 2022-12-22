@@ -32,8 +32,8 @@ class Webhook {
         if (this.title) this.content.unshift(this.title)
         const content = this.content.join('\n')
         this.content = []
-        webhookFeishu(content)
-        webhookWeixin(content)
+        process.env.WEBHOOK_FEISHU && webhookFeishu(content)
+        process.env.WEBHOOK_WEIXIN && webhookWeixin(content)
     }
 }
 

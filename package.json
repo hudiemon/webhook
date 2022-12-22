@@ -1,12 +1,13 @@
 {
   "name": "@hudiemon/webhook",
-  "version": "0.0.7",
+  "version": "2.0.0",
   "description": "webhook",
   "main": "dist/cjs/index.js",
   "types": "dist/cjs/index.d.ts",
   "scripts": {
     "dev": "father dev",
     "build": "father build",
+    "test": "jest --setupFiles dotenv/config",
     "build:deps": "father prebundle",
     "prepublishOnly": "father doctor && npm run build",
     "start": "npm run build && node -r dotenv/config dist/cjs/index.js"
@@ -30,7 +31,8 @@
   "devDependencies": {
     "@types/node": "^18.11.9",
     "dotenv": "^16.0.3",
-    "father": "^4.1.0"
+    "father": "^4.1.0",
+    "jest": "^29.3.1"
   },
   "dependencies": {
     "axios": "^1.1.3"

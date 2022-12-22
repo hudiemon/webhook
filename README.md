@@ -3,22 +3,27 @@
 [![NPM version](https://img.shields.io/npm/v/webhook.svg?style=flat)](https://npmjs.org/package/@hudiemon/webhook)
 [![NPM downloads](http://img.shields.io/npm/dm/webhook.svg?style=flat)](https://npmjs.org/package/@hudiemon/webhook)
 
-## Install
+## 安装
 
 ```bash
 $ pnpm i @hudiemon/webhook
 ```
+## 配置
+```javascript
+process.env.WEBHOOK_FEISHU
+process.env.WEBHOOK_WEIXIN
+```
+## 使用
+```javascript
+import Webhook from "@hudiemon/webhook";
 
-```typescript
-import {Message} from '@hudiemon/webhook'
+const webhook = new Webhook({title: "test"})
 
-const message = new Message({title: "test"})
-
-message.info('info')
-message.success('success')
-message.warning('warning')
-message.error('error')
-message.finally()
+webhook.info('info')
+webhook.success('success')
+webhook.warning('warning')
+webhook.error('error')
+webhook.finally()
 
 // test
 // info
@@ -26,6 +31,7 @@ message.finally()
 // ❗️warning
 // ❌error
 ```
+## 结果
 
 ## LICENSE
 
