@@ -24,15 +24,15 @@ webhook.success('success')
 webhook.warning('warning')
 webhook.error('error')
 webhook.finally()
-
-// test
-// info
-// ✅success
-// ❗️warning
-// ❌error
 ```
 ## 结果
-
+```
+test
+info
+✅success
+❗️warning
+❌error
+```
 ## LICENSE
 
 MIT
